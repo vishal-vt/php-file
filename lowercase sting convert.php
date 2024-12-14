@@ -63,8 +63,9 @@
 
 // yah difference batata hai same hai to 0 return jrega varna 1 return krTa hai .
 
-$str = "Hello WORLD";
-$str1 ="Hello WORLD";
-echo strcmp($str,$str1);
+// $str = "Hello WORLD";
+// $str1 ="Hello WORLD";
+// echo strcmp($str,$str1);
+
 
 ?>
