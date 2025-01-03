@@ -1,0 +1,33 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $number = intval($_POST['number']);
+    if ($number > 1) {
+        $isPrime = true;
+        for ($i = 2; $i <= sqrt($number); $i++) {
+            if ($number % $i == 0) {
+                $isPrime = false;
+                break;
+            }
+        }
+        if ($isPrime) {
+            echo "$number is a prime number.";
+        } else {
+            echo "$number is not a prime number.";
+        }
+    } else {
+        echo "$number is not a prime number.";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Number: <input type="text" name="number">
+  <input type="submit">
+</form>
+
+</body>
+</html>

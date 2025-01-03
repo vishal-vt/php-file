@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="form-container">
         <h2>Registration</h2>
-        <form action="" method="post">
+        <form action="create.php" method="post">
             <h3>Personal Details</h3>
             <div class="form-group">
                 <label for="fullName">Full Name</label>

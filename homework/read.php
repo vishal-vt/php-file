@@ -7,7 +7,6 @@
             font-family: Arial, sans-serif;
         }
         table {
-            width: 100%;
             border-collapse: collapse;
         }
         table, th, td {
@@ -16,9 +15,7 @@
         th, td {
             padding: 15px;
             text-align: left;
-          
         }
-        
         th {
             background-color:rgb(243, 120, 26);
             color: white;
@@ -41,7 +38,6 @@
             background-color: #f44336;
             padding: 10px 20px;
             border-radius: 5px;
-            margin-left: 45%;
         }
     </style>
 </head>
@@ -61,7 +57,8 @@
         <th>issueDate</th>
         <th>issueState</th>
         <th>expire</th>
-
+        <th>update</th>
+        <th>delete</th>
     </tr>
     <tbody>
         <?php
@@ -71,23 +68,25 @@
         if(mysqli_num_rows($result) > 0){
             while($record = mysqli_fetch_assoc($result)){
         ?>
-    <tr>
-        <td scope="row"><?php echo $record['id']; ?></td>
-        <td><?=$record['fullname']?></td>
-        <td><?=$record['dob']?></td>
-        <td><?=$record['email']?></td>
-        <td><?=$record['mobile']?></td>
-        <td><?=$record['gender']?></td>
-        <td><?=$record['occupation']?></td>
-        <td><?=$record['issueDate']?></td>
-        <td><?=$record['issueState']?></td>
-        <td><?=$record['expire']?></td>
-        <td>
-            <a href="delete.php?id=<?=$record['id']?>" class="btn btn-danger">Delete</a>
-            <a href="update.php?id=<?=$record['id']?>" class="btn btn-danger">Update</a>
-        </td>
-    </tr>
-    <?php
+        <tr>
+            <td scope="row"><?php echo $record['id']; ?></td>
+            <td><?=$record['fullName']?></td>
+            <td><?=$record['dob']?></td>
+            <td><?=$record['email']?></td>
+            <td><?=$record['mobile']?></td>
+            <td><?=$record['gender']?></td>
+            <td><?=$record['occupation']?></td>
+            <td><?=$record['issueDate']?></td>
+            <td><?=$record['issueState']?></td>
+            <td><?=$record['expire']?></td>
+            <td>
+                <a href="update.php?id=<?=$record['id']?>" class="btn btn-danger">Update</a>
+            </td>
+            <td>
+                <a href="delete.php?id=<?=$record['id']?>" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        <?php
             }
         }
         ?>
